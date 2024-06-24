@@ -119,6 +119,42 @@ void numbered_reverse_half_pyramid()
     }
 }
 
+void hollow_pyramid(){
+    cout<<"Enter height of pyramid : "<<endl; int height; cin>>height;
+
+    for (int i = 0; i < height; i++)
+    {
+
+        for (int j = 0; j < height+(height-1); j++)
+        {
+            if (j == height - 1 - i || j == height - 1 + i || i == height - 1) {
+                cout << " * ";
+            } else {
+                cout << "   ";
+            }
+        }
+        cout<<endl;
+    }
+    
+}
+
+void pyramid() {
+    cout << "Enter height of pyramid : " << endl;
+    int height;
+    cin >> height;
+
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < height + (height - 1); j++) {
+            if (j >= height - 1 - i && j <= height - 1 + i) {
+                cout << " * ";
+            } else {
+                cout << "   ";
+            }
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     int k = 1;
@@ -130,6 +166,8 @@ int main()
         cout << "//// 3. Numbered Half Pyramid ////\n";
         cout << "//// 4. Reverse Half Pyramid ////\n";
         cout << "//// 5. Numbered Reverse Half Pyramid ////\n";
+        cout << "//// 6. Hollow Pyramid ////\n";
+        cout << "//// 7.  Pyramid ////\n";
         cout << "//// 99. Exit ////\n";
 
         int choice;
@@ -154,6 +192,14 @@ int main()
 
         case 5:
             numbered_reverse_half_pyramid();
+            break;
+
+        case 6:
+            hollow_pyramid();
+            break;
+
+        case 7:
+            pyramid();
             break;
 
         case 99:
