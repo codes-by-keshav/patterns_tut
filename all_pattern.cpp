@@ -1,102 +1,168 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void rectangle (){
-    cout<< "Enter length of rectangle \n";
-    int l; cin>>l;
-    cout<< "Enter breadth of rectangle \n";
-    int b; cin>>b;
+void rectangle()
+{
+    cout << "Enter length of rectangle \n";
+    int l;
+    cin >> l;
+    cout << "Enter breadth of rectangle \n";
+    int b;
+    cin >> b;
     for (int i = 0; i < b; i++)
     {
         for (int j = 0; j < l; j++)
         {
-            cout<<"* ";
+            cout << "* ";
         }
-        cout<<endl;
+        cout << endl;
     }
 }
 
-void half_pyramid(){
-    cout<<"Enter height of pyramid \n";
-    int height; cin>>height;
-    for (int i=0; i<height;i++){
-        for (int j = 0; j <= i; j++)
-        {
-            cout<<"* ";
-        }
-        cout<<endl;        
-    }
-}
-
-void numbered_half_pyramid(){
-    cout<<"Enter height of pyramid\n";
-    int height; cin>>height;
-    
+void half_pyramid()
+{
+    cout << "Enter height of pyramid \n";
+    int height;
+    cin >> height;
     for (int i = 0; i < height; i++)
     {
-        int num=1;
         for (int j = 0; j <= i; j++)
         {
-            cout<<num<<" ";
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+
+void numbered_half_pyramid()
+{
+    cout << "Enter height of pyramid\n";
+    int height;
+    cin >> height;
+
+    for (int i = 0; i < height; i++)
+    {
+        int num = 1;
+        for (int j = 0; j <= i; j++)
+        {
+            cout << num << " ";
             num++;
         }
-        cout<<endl;
+        cout << endl;
     }
-    
 }
 
-void reverse_half_pyramid(){
-    cout<<"Enter height of pyramid\n";
-    int height; cin>>height;
+void reverse_half_pyramid()
+{
+    cout << "Enter height of pyramid\n";
+    int height;
+    cin >> height;
     for (int i = 0; i < height; i++)
     {
-        for (int j = height; j >i; j--)
+        for (int j = height; j > i; j--)
         {
-            cout<<"* ";
+            cout << "* ";
         }
-        cout<<endl;
-        
+        cout << endl;
     }
-    
 }
+
+void numbered_reverse_half_pyramid()
+{
+    cout << "Enter Height :" << endl;
+    int height;
+    cin >> height;
+
+    cout << "\n --------------Style 1: ---------------\n"; // prints like 54321 5432 543 54 5
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = height; j > i; j--)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+
+    // Style 2
+    cout << "\n --------------Style 2: ---------------\n";// prints like 11111 2222 333 44 5
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = height; j > i; j--)
+        {
+            cout << i + 1 << " ";
+        }
+        cout << endl;
+    }
+
+    // Style 3
+    cout << "\n --------------Style 3: ---------------\n"; //prints like 54321 4321 321 21 1
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = height; j > i; j--)
+        {
+            cout << j - i << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "\n --------------Style 4: ---------------\n"; //prints like 12345 2345 345 45 5
+    for (int i = 0; i < height; i++)
+    {
+        int num = i;
+        for (int j = height; j > i; j--)
+        {
+            cout << num + 1 << " ";
+            num++;
+        }
+        
+        cout << endl;
+    }
+}
+
 int main()
 {
-    int k=1;
-    while (k==1)
+    int k = 1;
+    while (k == 1)
     {
-        cout<<"//// Enter tthe pattern u want to print ////\n";
-        cout<<"//// 1. Rectangle ////\n";
-        cout<<"//// 2. Half Pyramid ////\n";
-        cout<<"//// 3. Numbered Half Pyramid ////\n";
-        cout<<"//// 4. Reverse Half Pyramid ////\n";
-        cout<<"//// 99. Exit ////\n";
+        cout << "//// Enter tthe pattern u want to print ////\n";
+        cout << "//// 1. Rectangle ////\n";
+        cout << "//// 2. Half Pyramid ////\n";
+        cout << "//// 3. Numbered Half Pyramid ////\n";
+        cout << "//// 4. Reverse Half Pyramid ////\n";
+        cout << "//// 5. Numbered Reverse Half Pyramid ////\n";
+        cout << "//// 99. Exit ////\n";
 
-        int choice; cin>>choice;
+        int choice;
+        cin >> choice;
         switch (choice)
         {
-            case 1:
-                rectangle();
-                break;
+        case 1:
+            rectangle();
+            break;
 
-            case 2:
-                half_pyramid();
-                break;
+        case 2:
+            half_pyramid();
+            break;
 
-            case 3:
-                numbered_half_pyramid();
-                break;
+        case 3:
+            numbered_half_pyramid();
+            break;
 
-            case 4:
-                reverse_half_pyramid();
-                break;
+        case 4:
+            reverse_half_pyramid();
+            break;
 
-            case 99:
-                k=0;
-                break;
+        case 5:
+            numbered_reverse_half_pyramid();
+            break;
 
-            default:
-                cout<<"Invalid choice \n";
-                break;
+        case 99:
+            k = 0;
+            break;
+
+        default:
+            cout << "Invalid choice \n";
+            break;
         }
     }
     return 0;
